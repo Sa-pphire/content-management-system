@@ -9,4 +9,6 @@ router.post("/login", userController.login)
 
 router.get("/", userController.getUsers)
 
+router.put("/:id/update", userController.update)
+
 module.exports = router

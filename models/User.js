@@ -10,10 +10,6 @@ const User = sequelize.define(
       primaryKey: true,
       allowNull: false,
     },
-    username: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
-    },
     first_name: {
       type: DataTypes.STRING(255),
       allowNull: false,
@@ -28,13 +24,6 @@ const User = sequelize.define(
     },
     password: {
       type: DataTypes.STRING(255),
-    },
-    profile_pic: {
-      type: DataTypes.TEXT,
-    },
-    is_verified: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
     },
     createdAt: {
       type: DataTypes.DATE,

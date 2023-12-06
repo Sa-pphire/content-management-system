@@ -9,11 +9,11 @@ router.get("/", postController.getPosts )
 
 router.get("/:id", postController.getPost )
 
-router.get("/update/:id", postController.updatePost )
+router.put("/:id/update", postController.updatePost )
 
-router.get("/delete/:id", postController.deletePost )
+router.delete("/:id/delete", postController.deletePost )
 
-router.get("/get/:userId", postController.getPostsById)
+router.get("/:userId/get", postController.getPostsById)
 
 
 module.exports = router

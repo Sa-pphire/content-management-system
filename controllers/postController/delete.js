@@ -8,14 +8,14 @@ const deletePost = async (req, res) => {
     if (!post) {
       res.status(404).json({
         status: 404,
-        message: 'User not found' });
+        message: 'Post not found' });
     }
 
     await post.destroy();
 
     res.status(200).json({
         status: 200,
-        message: 'User deleted successfully' });
+        message: 'Post deleted successfully' });
   } catch (error) {
     res.status(500).json({ 
         status: 500,

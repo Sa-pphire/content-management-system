@@ -11,4 +11,6 @@ router.get("/", userController.getUsers)
 
 router.put("/:id/update", userController.update)
 
+router.get("/logout", userController.logout)
+
 module.exports = router

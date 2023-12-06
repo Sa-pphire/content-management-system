@@ -9,6 +9,9 @@ router.get("/", postController.getPosts )
 
 router.get("/:id", postController.getPost )
 
+router.get("/update/:id", postController.updatePost )
+
+router.get("/delete/:id", postController.deletePost )
 
 
 module.exports = router

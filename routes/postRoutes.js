@@ -13,5 +13,7 @@ router.get("/update/:id", postController.updatePost )
 
 router.get("/delete/:id", postController.deletePost )
 
+router.get("/get/:userId", postController.getPostsById)
+
 
 module.exports = router

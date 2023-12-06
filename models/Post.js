@@ -1,6 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 const User = require('./User');
+const Category = require('./Category')
 
 const Post = sequelize.define(
   'posts',
@@ -36,5 +37,8 @@ const Post = sequelize.define(
 
 User.hasMany(Post);
 Post.belongsTo(User);
+
+Category.hasMany(Post);
+Post.belongsTo(Category);
 
 module.exports = Post;

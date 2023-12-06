@@ -1,5 +1,6 @@
 const express = require('express');
 const userRoutes = require('./routes/userRoutes')
+const postRoutes = require('./routes/postRoutes')
 
 require('dotenv').config()
 
@@ -14,6 +15,7 @@ db.sync()
 
 // Routes
 app.use('/api/v1/user', userRoutes);
+app.use('/api/v1/post', postRoutes);
 
 const PORT = process.env.PORT
 app.listen(PORT, () =>{

@@ -1,19 +1,20 @@
 const { Router } = require("express");
 const postController = require("../controllers/postController");
+const authenticate = require('../middlewares/authMiddleware')
 
 const router = Router();
 
-router.post("/:userId/create", postController.createPost )
+router.post("/:userId/create", authenticate, postController.createPost )
 
-router.get("/", postController.getPosts )
+router.get("/", authenticate, postController.getPosts )
 
-router.get("/:id", postController.getPost )
+router.get("/:id", authenticate, postController.getPost )
 
-router.put("/:id/update", postController.updatePost )
+router.put("/:id/update", authenticate, postController.updatePost )
 
-router.delete("/:id/delete", postController.deletePost )
+router.delete("/:id/delete", authenticate, postController.deletePost )
 
-router.get("/:userId/get", postController.getPostsById)
+router.get("/:userId/get", authenticate, postController.getPostsById)
 
 
 module.exports = router

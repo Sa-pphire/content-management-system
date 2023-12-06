@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const userController = require("../controllers/userController");
 require('../services/passport');
+const authenticate = require('../middlewares/authMiddleware')
 
 const router = Router();
 
@@ -23,10 +24,10 @@ router.get(
     userController.handleAuth,
 );
 
-router.get("/", userController.getUsers)
+router.get("/", authenticate, userController.getUsers)
 
-router.put("/:id/update", userController.update)
+router.put("/:id/update", authenticate, userController.update)
 
-router.get("/logout", userController.logout)
+router.get("/logout", authenticate, userController.logout)
 
 module.exports = router
